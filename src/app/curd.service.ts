@@ -12,6 +12,9 @@ export class CurdService {
   add(todoDesc){
     return this.http.get(this.url+'/add?todo='+todoDesc);
   }
+  update(todoDesc,todoId){
+    return this.http.get(this.url+'/update?todo='+todoDesc+'&todoId='+todoId);
+  }
   delete(todoId){
     return this.http.get(this.url+'/delete?todoId='+todoId);
   }

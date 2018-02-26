@@ -36,6 +36,16 @@ export class AppComponent{
     input.value='';
 
   }
+  updateList(input,id){
+    this.buffer = input.innerHTML;
+    this.service.update(this.buffer,id)
+    .subscribe(
+      (res:Response) => {
+          console.log(res.json());
+      }
+    );
+    this.readList();
+  }
   deleteList(input){
     this.buffer = input;
     this.service.delete(this.buffer)

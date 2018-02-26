@@ -11,10 +11,15 @@
   <div class="listing">
     <ul class="list-group">
       <li *ngFor="let item of todos" class="list-group-item">
-        {{item.todo}}
-        <button style="float:right" class="btn btn-outline-danger" (click)="deleteList(item.id)" type="button">
-          Delete
-        </button>
+        <span contenteditable="true" #edited>{{item.todo}}</span>
+        <div class="btn-group"  style="float:right">
+          <button class="btn btn-outline-warning" (click)="updateList(edited,item.id)" type="button">
+            Update
+          </button>
+          <button class="btn btn-outline-danger" (click)="deleteList(item.id)" type="button">
+            Delete
+          </button>
+        </div>
       </li>
     </ul>
   </div>
